@@ -1,0 +1,11 @@
+{
+  id: "de-a0-01",
+  level: "A0",
+  title: "Greetings",
+  category: "Everyday life",
+  description: "Learn how to greet people.",
+  vocabulary: [],
+  sentences: [],
+  dialogue: [],
+  exercises: []
+}
