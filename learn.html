@@ -1,62 +1,62 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f7f5ef">
-  <meta name="description" content="Learn languages step by step with WorldLingua. Explore vocabulary, useful sentences, dialogues and practical exercises from A0 to B1.">
-  <title>Learn | WorldLingua</title>
+  <meta name="description" content="WorldLingua 世界语言学习平台。学习德语、英语、法语、西班牙语和日语，从 A0 到 B1 循序渐进地掌握词汇、例句、对话与实用表达。">
+  <title>课程学习 | WorldLingua</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="learn-page">
 
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="WorldLingua homepage">
+    <a class="brand" href="index.html" aria-label="WorldLingua 首页">
       <span class="brand-mark" aria-hidden="true">W</span>
       <span>WorldLingua</span>
     </a>
 
-    <nav class="header-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="#course-content">Learn</a>
+    <nav class="header-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="#course-content">课程学习</a>
     </nav>
   </header>
 
   <main class="learn-main">
 
     <section class="learn-heading">
-      <a class="back-link" href="index.html">← All languages</a>
+      <a class="back-link" href="index.html">← 返回语言选择</a>
 
       <div class="learn-heading-row">
         <div>
-          <p class="eyebrow">YOUR LEARNING JOURNEY</p>
-          <h1 id="language-title">Learn a language</h1>
+          <p class="eyebrow">开启你的语言学习之旅</p>
+          <h1 id="language-title">学习一门新语言</h1>
           <p class="learn-intro" id="language-description">
-            Build your skills step by step through real-life situations.
+            从真实生活场景出发，一步一步提升语言能力。
           </p>
         </div>
 
         <div class="level-indicator">
-          <span class="level-label">YOUR LEVEL</span>
+          <span class="level-label">当前等级</span>
           <strong id="current-level">A0</strong>
         </div>
       </div>
     </section>
 
-    <section class="learning-overview" aria-label="Learning progress">
+    <section class="learning-overview" aria-label="学习进度">
       <div class="overview-card">
-        <span class="overview-label">Completed lessons</span>
+        <span class="overview-label">已完成课程</span>
         <strong id="completed-count">0</strong>
       </div>
 
       <div class="overview-card">
-        <span class="overview-label">Vocabulary learned</span>
+        <span class="overview-label">已学习词汇</span>
         <strong id="vocabulary-count">0</strong>
       </div>
 
       <div class="overview-card">
-        <span class="overview-label">Course progress</span>
+        <span class="overview-label">课程完成进度</span>
         <strong id="progress-percent">0%</strong>
       </div>
     </section>
@@ -65,35 +65,35 @@
 
       <aside class="course-sidebar">
         <div class="sidebar-heading">
-          <p class="eyebrow">COURSE CONTENT</p>
-          <h2>Your path</h2>
+          <p class="eyebrow">课程目录</p>
+          <h2>学习路径</h2>
         </div>
 
-        <div class="level-tabs" id="level-tabs" aria-label="Choose your level">
+        <div class="level-tabs" id="level-tabs" aria-label="选择学习等级">
           <button class="level-tab active" type="button" data-level="A0">
             <span class="level-tab-code">A0</span>
-            <span class="level-tab-name">First steps</span>
+            <span class="level-tab-name">入门起步</span>
           </button>
 
           <button class="level-tab" type="button" data-level="A1">
             <span class="level-tab-code">A1</span>
-            <span class="level-tab-name">Beginner</span>
+            <span class="level-tab-name">初级入门</span>
           </button>
 
           <button class="level-tab" type="button" data-level="A2">
             <span class="level-tab-code">A2</span>
-            <span class="level-tab-name">Elementary</span>
+            <span class="level-tab-name">基础进阶</span>
           </button>
 
           <button class="level-tab" type="button" data-level="B1">
             <span class="level-tab-code">B1</span>
-            <span class="level-tab-name">Independent</span>
+            <span class="level-tab-name">独立交流</span>
           </button>
         </div>
 
         <div class="sidebar-note">
           <span class="sidebar-note-line"></span>
-          <p>Small steps. Useful words. Real conversations.</p>
+          <p>从小处开始，积累实用词汇，在真实交流中不断进步。</p>
         </div>
       </aside>
 
@@ -102,70 +102,70 @@
         <section class="lesson-list-section" id="lesson-list-section">
           <div class="section-heading-row">
             <div>
-              <p class="eyebrow" id="selected-level-eyebrow">LEVEL A0</p>
-              <h2 id="selected-level-title">First steps</h2>
+              <p class="eyebrow" id="selected-level-eyebrow">当前等级 A0</p>
+              <h2 id="selected-level-title">入门起步</h2>
             </div>
-            <span class="lesson-total" id="lesson-total">Lessons</span>
+            <span class="lesson-total" id="lesson-total">课程列表</span>
           </div>
 
           <p class="section-description" id="level-description">
-            Start with essential words, simple expressions and your first conversations.
+            从最常用的词汇和简单表达开始，练习你的第一段对话。
           </p>
 
           <div id="lesson-list" class="lesson-list">
-            <p class="loading-message">Loading lessons...</p>
+            <p class="loading-message">正在加载课程……</p>
           </div>
         </section>
 
         <section class="lesson-workspace" id="lesson-workspace" hidden>
           <div class="workspace-top">
             <button class="back-link" type="button" id="back-to-lessons">
-              ← Back to lessons
+              ← 返回课程列表
             </button>
             <span id="lesson-level-badge" class="lesson-level-badge">A0</span>
           </div>
 
           <div class="workspace-heading">
-            <p class="eyebrow" id="lesson-category">EVERYDAY LIFE</p>
-            <h2 id="lesson-title">Lesson title</h2>
+            <p class="eyebrow" id="lesson-category">日常生活</p>
+            <h2 id="lesson-title">课程标题</h2>
             <p id="lesson-intro" class="section-description"></p>
           </div>
 
-          <div class="lesson-step-tabs" id="lesson-step-tabs" aria-label="Lesson sections">
+          <div class="lesson-step-tabs" id="lesson-step-tabs" aria-label="课程学习模块">
             <button type="button" class="lesson-step-tab active" data-step="vocabulary">
-              Vocabulary
+              单词
             </button>
             <button type="button" class="lesson-step-tab" data-step="sentences">
-              Sentences
+              例句
             </button>
             <button type="button" class="lesson-step-tab" data-step="dialogue">
-              Dialogue
+              情景对话
             </button>
             <button type="button" class="lesson-step-tab" data-step="practice">
-              Practice
+              练习
             </button>
           </div>
 
           <div class="lesson-panel" id="lesson-panel">
-            <p class="loading-message">Preparing your lesson...</p>
+            <p class="loading-message">正在准备课程内容……</p>
           </div>
 
           <div class="lesson-navigation">
             <button type="button" class="button button-secondary" id="previous-lesson">
-              Previous lesson
+              上一课
             </button>
             <button type="button" class="button button-primary" id="next-lesson">
-              Next lesson →
+              下一课 →
             </button>
           </div>
 
           <div class="lesson-completion">
             <div>
-              <h3>Finished this lesson?</h3>
-              <p>Mark it as complete to track your learning progress.</p>
+              <h3>学完这一课了吗？</h3>
+              <p>完成课程后进行标记，方便追踪你的学习进度。</p>
             </div>
             <button type="button" class="button button-primary" id="complete-lesson">
-              Mark as complete
+              标记为已完成
             </button>
           </div>
         </section>
@@ -177,7 +177,7 @@
 
   <footer class="site-footer">
     <a class="footer-brand" href="index.html">WorldLingua</a>
-    <p>Your language. Your world.</p>
+    <p>你的语言，你的世界。</p>
   </footer>
 
   <script src="languages/de.js"></script>
