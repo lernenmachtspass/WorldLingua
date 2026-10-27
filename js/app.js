@@ -1,4 +1,3 @@
-
 /* =========================================================
    WorldLingua — Main application controller
    File: js/app.js
@@ -38,20 +37,16 @@
 
   const LEVELS = {
     A0: {
-      title: "入门起步",
-      description: "从零开始，学习基础词汇、简单表达和第一段日常对话。"
+      title: "入门起步"
     },
     A1: {
-      title: "初级入门",
-      description: "学习介绍自己、理解常见表达，并应对简单的日常交流。"
+      title: "初级入门"
     },
     A2: {
-      title: "基础进阶",
-      description: "练习日常生活、旅行、购物、工作和过往经历等话题。"
+      title: "基础进阶"
     },
     B1: {
-      title: "独立交流",
-      description: "学习表达观点、说明经历、讨论熟悉的话题，并逐步进行独立交流。"
+      title: "独立交流"
     }
   };
 
@@ -399,7 +394,7 @@
 
     if (eyebrow) eyebrow.textContent = `当前等级 ${state.level}`;
     if (title) title.textContent = levelInfo.title;
-    if (description) description.textContent = levelInfo.description;
+    if (description) description.textContent = "";
   }
 
   function updateLanguageDisplay() {
@@ -412,19 +407,9 @@
     }
 
     if (description) {
-      description.textContent = getText(
-        state.languageData?.descriptionZh ??
-        state.languageData?.description,
-        languageInfo.description
-      );
-
-      // 如果数据中的 description 是英文，则使用中文默认介绍。
-      if (!hasChinese(description.textContent)) {
-        description.textContent = languageInfo.description;
-      }
+      description.textContent = "";
     }
 
-    // 界面语言是中文，目标语言原文通过各内容元素单独标记。
     document.documentElement.lang = "zh-CN";
     document.title = `${languageInfo.name}课程 | WorldLingua`;
   }
@@ -455,7 +440,6 @@
       list.innerHTML = `
         <div class="empty-lessons">
           <p><strong>当前等级暂无课程。</strong></p>
-          <p>请检查对应语言文件中是否包含 ${escapeHTML(state.level)} 等级的课程。</p>
         </div>
       `;
       return;
@@ -480,10 +464,6 @@
 
             <span class="lesson-card-content-title">
               <h3>${escapeHTML(lesson.title)}</h3>
-            </span>
-
-            <span class="lesson-card-content-description">
-              <p>${escapeHTML(lesson.description)}</p>
             </span>
 
             <span class="lesson-card-meta">
@@ -517,7 +497,6 @@
 
     return `
       <h3 class="lesson-section-title">重点词汇</h3>
-      <p class="wl-section-hint">先看目标语言，再结合英语和中文理解词义。</p>
 
       <div class="vocabulary-grid">
         ${items.map(item => {
@@ -650,7 +629,6 @@
 
     return `
       <h3 class="lesson-section-title">情景对话</h3>
-      <p class="wl-section-hint">阅读原文，参考英语和中文理解每一句话。</p>
 
       <div class="dialogue-list">
         ${items.map((item, index) => {
@@ -727,7 +705,6 @@
 
     panel.innerHTML = `
       <h3 class="lesson-section-title">练习与自测</h3>
-      <p class="wl-section-hint">选择一个答案，检查自己是否理解了本课内容。</p>
       <div class="wl-practice-list">
         ${items.map((item, index) => {
           const question = getText(item.question ?? item.text, `第 ${index + 1} 题`);
@@ -806,14 +783,14 @@
           if (correct) {
             button.classList.add("is-correct");
             if (feedback) {
-              feedback.textContent = "回答正确！做得很好。";
+              feedback.textContent = "回答正确！";
               feedback.classList.add("is-correct");
             }
           } else {
             button.classList.add("is-incorrect");
             if (feedback) {
               feedback.textContent = answer
-                ? `还差一点。正确答案：${answer}`
+                ? `正确答案：${answer}`
                 : "这次没有答对，请复习本课内容。";
 
               feedback.classList.add("is-incorrect");
@@ -910,7 +887,7 @@
 
     if (title) title.textContent = lesson.title;
     if (category) category.textContent = lesson.category;
-    if (intro) intro.textContent = lesson.description;
+    if (intro) intro.textContent = "";
     if (badge) badge.textContent = lesson.level;
 
     updateLevelDisplay();
@@ -1081,7 +1058,6 @@
     list.innerHTML = `
       <div class="status-message error">
         <strong>课程数据加载失败。</strong>
-        <p>请检查 languages 文件夹中的语言文件是否存在，以及 learn.html 是否正确加载了这些文件。</p>
       </div>
     `;
   }
